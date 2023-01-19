@@ -1,6 +1,10 @@
 :root {
-  --background-color: #333;
+  --background-color: rgb(20, 20, 20, 1);
+  --background-color-light: rgb(20, 20, 20, 0.5);
   --border-color: rgb(255, 255, 255, 0.1);
+  --border-color-light: rgb(4, 14, 1, 0.1);
+  --text-color: rgb(255, 255, 255, 1);
+  --text-color-fade: rgb(255, 255, 255, 0.5);
 }
 
 * {
@@ -13,14 +17,25 @@ h3,
 a,
 p,
 span {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Clash Grotesk", sans-serif;
   font-weight: 400;
-  color: rgb(255, 255, 255, 1);
+  color: var(--text-color-fade);
+  transition: ease-in-out 1.2s;
 }
 
 a {
   text-decoration: none;
 }
+
+img {
+  max-height: 100%;
+  max-width: 100%;
+  transition: ease-in-out 1s;
+}
+
+/* .App {
+  height: 100vh;
+} */
 
 body {
   background-color: var(--background-color);
@@ -29,12 +44,28 @@ body {
   height: 100vh;
   margin: 0px;
   overflow: hidden;
+  transition: ease-in-out 1s;
+}
+
+.body-light {
+  background-color: rgb(231, 231, 231);
+}
+
+.body-light a,
+.body-light h2 {
+  color: var(--background-color-light);
 }
 
 nav {
   display: flex;
   width: 100%;
   border-bottom: 1px solid var(--border-color);
+  transition: ease-in-out 1s;
+}
+
+#nav-light {
+  border-bottom: 1px solid var(--border-color-light);
+  transition: ease-in-out 1s;
 }
 
 nav > .nav-section {
@@ -44,14 +75,53 @@ nav > .nav-section {
   border-left: 1px solid var(--border-color);
   align-items: center;
   justify-content: center;
+  transition: ease-in-out 1s;
 }
 
-#nav-logo-section {
+nav > .nav-section-light {
+  padding: 3rem 2rem;
+  display: flex;
+  gap: 1rem;
+  border-left: 1px solid var(--border-color-light);
+  align-items: center;
+  justify-content: center;
+  transition: ease-in-out 1s;
+}
+
+nav > .nav-section #nav-logo-section {
   justify-content: flex-start;
 }
 
-#nav-link-section {
+/* .nav-social-icons {
+  position: relative;
+} */
+
+/* .nav-social-icons img {
+  width: 1em;
+  padding: 0;
+  margin-left: -1em;
+  transform: translateX(-25px);
+} */
+
+/* .linked-icon-fade {
+  opacity: 0.0000001;
+  transform: translateY(10em) scale(0.1);
+  transition: ease-in-out 0.5s;
+}
+
+.linked-icon {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: ease-in-out 0.5s;
+} */
+
+#nav-link-section,
+#nav-link-section a {
   gap: 6rem;
+}
+
+#nav-link-section a:hover {
+  color: var(--text-color);
 }
 
 #nav-logo-section,
@@ -59,17 +129,213 @@ nav > .nav-section {
   flex-basis: calc(100% / 3);
 }
 
-#nav-social-section {
+#nav-social-section,
+#nav-social-section-dark {
   gap: 3rem;
+  line-height: 1px;
 }
 
 #nav-social-section,
-#nav-contact-section {
+#nav-contact-section,
+#nav-social-section-dark,
+#nav-contact-section-dark {
   flex-grow: 1;
+}
+
+#nav-contact-section a,
+#nav-social-section a {
+  color: var(--text-color-fade);
+  transition: ease-in-out 0.5s;
+}
+
+#nav-contact-section a:hover,
+#nav-social-section a:hover {
+  color: var(--text-color);
+  transition: ease-in-out 0.5s;
+}
+
+#nav-contact-section-dark a,
+#nav-social-section-dark a {
+  color: var(--background-color-light);
+  transition: ease-in-out 0.5s;
 }
 
 /* -----------MAIN-------------- */
 
 main {
   flex-grow: 1;
+  position: relative;
+  margin: 0;
+}
+
+main > article {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 2fr 1fr;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+main > article h1 {
+  font-size: 60px;
+  line-height: 0.3em;
+}
+
+main > article > .article-section {
+  height: 100%;
+}
+
+main > article > .article-image-section {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+main > article > .article-image-section img {
+  flex-grow: 1;
+  object-fit: cover;
+}
+
+main > article > .article-description-section {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding: 4em;
+}
+
+main > article > .article-description-section p {
+  font-size: 20px;
+  margin: 0;
+  color: var(--text-color-fade);
+}
+
+#article-description-light {
+  color: var(--background-color);
+}
+
+main > article > .article-description-section p:hover {
+  color: var(--text-color);
+  transition: ease 0.4s;
+  transform: translateY(-8px);
+}
+
+main > article > .article-title-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+main > article > .article-title-section h2 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 0.8em;
+  letter-spacing: -0.1em;
+  padding: 0 2em;
+}
+
+.article-title-container {
+  max-height: 8em;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0;
+}
+
+.article-title-container h1 {
+  position: relative;
+  top: 0;
+  transition: ease-out 0.5s;
+  font-weight: 700;
+}
+
+.title-neutral {
+  color: var(--text-color);
+}
+
+.title-hovered {
+  transform: translateY(-1.75em);
+  color: var(--background-color);
+}
+
+.article-title-cross {
+  transform: rotateZ(90deg);
+  transition: ease-in-out 0.5s;
+}
+
+.article-title-cross-hover {
+  color: var(--background-color);
+  transform: rotateZ(0deg);
+  transition: ease-in-out 0.5s;
+}
+
+main > article > .article-nav-section {
+  display: flex;
+}
+
+main > article > .article-nav-section button {
+  flex-grow: 1;
+  background: none;
+  border: none;
+  color: rgb(255, 255, 255, 1);
+}
+
+.article-nav-btn-container {
+  max-height: 6.5em;
+  overflow-y: hidden;
+}
+
+.move-work-arrow {
+  color: var(--text-color);
+  transform: translateY(-68px);
+  transition: ease-out 0.5s;
+}
+
+.move-work-arrow:hover {
+  transform: translateY(0px);
+  transition: ease-out 0.5s;
+  font-size: 20px;
+}
+
+#work-box h2 {
+  color: var(--text-color);
+}
+
+.work-with-arrow {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+}
+
+main > article > .article-description-section,
+main > article > .article-nav-section {
+  max-height: 100%;
+  border-left: 1px solid var(--border-color);
+}
+
+#article-description-home p {
+  font-size: 30 px;
+}
+
+#article-description-home-light,
+#article-nav-light {
+  border-left: 1px solid var(--border-color-light);
+}
+
+main > article > .article-title-section,
+main > article > .article-nav-section {
+  border-top: 1px solid var(--border-color);
+}
+
+#article-title-light,
+#article-nav-light {
+  border-top: 1px solid var(--border-color-light);
+}
+
+main > article[data-status="inactive"] {
+  transform: translateX(-100%);
 }
