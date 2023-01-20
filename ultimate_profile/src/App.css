@@ -33,9 +33,9 @@ img {
   transition: ease-in-out 1s;
 }
 
-/* .App {
+.App {
   height: 100vh;
-} */
+}
 
 body {
   background-color: var(--background-color);
@@ -69,7 +69,7 @@ nav {
 }
 
 nav > .nav-section {
-  padding: 3rem 2rem;
+  padding: 3em 2em;
   display: flex;
   gap: 1rem;
   border-left: 1px solid var(--border-color);
@@ -79,7 +79,7 @@ nav > .nav-section {
 }
 
 nav > .nav-section-light {
-  padding: 3rem 2rem;
+  padding: 3em 2em;
   display: flex;
   gap: 1rem;
   border-left: 1px solid var(--border-color-light);
@@ -88,32 +88,13 @@ nav > .nav-section-light {
   transition: ease-in-out 1s;
 }
 
-nav > .nav-section #nav-logo-section {
+#nav-logo-section {
   justify-content: flex-start;
 }
 
-/* .nav-social-icons {
-  position: relative;
-} */
-
-/* .nav-social-icons img {
-  width: 1em;
-  padding: 0;
-  margin-left: -1em;
-  transform: translateX(-25px);
-} */
-
-/* .linked-icon-fade {
-  opacity: 0.0000001;
-  transform: translateY(10em) scale(0.1);
-  transition: ease-in-out 0.5s;
+.cc-logo {
+  width: 2em;
 }
-
-.linked-icon {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  transition: ease-in-out 0.5s;
-} */
 
 #nav-link-section,
 #nav-link-section a {
@@ -122,6 +103,7 @@ nav > .nav-section #nav-logo-section {
 
 #nav-link-section a:hover {
   color: var(--text-color);
+  font-weight: 500;
 }
 
 #nav-logo-section,
@@ -151,7 +133,12 @@ nav > .nav-section #nav-logo-section {
 #nav-contact-section a:hover,
 #nav-social-section a:hover {
   color: var(--text-color);
-  transition: ease-in-out 0.5s;
+  transition: ease-in-out 0.2s;
+  transform: translateY(-0.1em) scale(1.1);
+}
+
+#nav-contact-section a:hover {
+  transform: translateY(-0.1em) rotateZ(2deg) scale(1.1);
 }
 
 #nav-contact-section-dark a,
@@ -274,6 +261,7 @@ main > article > .article-title-section h2 {
 
 main > article > .article-nav-section {
   display: flex;
+  transition: ease-out 0.5s;
 }
 
 main > article > .article-nav-section button {
@@ -281,6 +269,7 @@ main > article > .article-nav-section button {
   background: none;
   border: none;
   color: rgb(255, 255, 255, 1);
+  transition: ease-out 0.5s;
 }
 
 .article-nav-btn-container {
@@ -294,7 +283,7 @@ main > article > .article-nav-section button {
   transition: ease-out 0.5s;
 }
 
-.move-work-arrow:hover {
+.move-work-arrow-hover {
   transform: translateY(0px);
   transition: ease-out 0.5s;
   font-size: 20px;
@@ -302,6 +291,7 @@ main > article > .article-nav-section button {
 
 #work-box h2 {
   color: var(--text-color);
+  font-weight: 500;
 }
 
 .work-with-arrow {
