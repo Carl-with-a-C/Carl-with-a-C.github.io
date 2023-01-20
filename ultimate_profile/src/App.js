@@ -1,23 +1,29 @@
 import "./App.css";
 import lineWobbleLight from "./images/wassle.gif";
 import lineWobbleDark from "./images/wobble.gif";
-
+import eyeIcon from "./images/eye-icon.svg";
 import rightArrow from "./images/curved-arrow-right.svg";
 import cross from "./images/cross.svg";
 import rightArrowDark from "./images/curved-arrow-right-dark.svg";
 import crossDark from "./images/darkCross.svg";
-import linkedinIcon from "./images/linkedin.svg";
+import ccLogoDark from "./images/CC-logo-black.svg";
+import ccLogoLight from "./images/CC-logo-wht.svg";
+
 import { useState, useEffect } from "react";
 
 import { Work } from "./Work";
 
+import { AnimCursor } from "./components/AnimCursor";
+
 function App() {
   const [titleHover, setTitleHover] = useState(false);
   const [socialHover, setSocialHover] = useState(false);
+  const [workHover, setWorkHover] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   return (
     <div className="App">
+      <AnimCursor />
       <body className={titleHover ? "body-light" : "body-dark"}>
         <nav id={titleHover ? "nav-light" : null}>
           <div
@@ -25,7 +31,11 @@ function App() {
             className={titleHover ? "nav-section-light" : "nav-section"}
           >
             <a href="#">
-              C<i className="fa-solid fa-dumpster-fire"></i>
+              <img
+                className="cc-logo"
+                src={titleHover ? ccLogoDark : ccLogoLight}
+                alt="CC-logo"
+              />
             </a>
           </div>
           <div
@@ -59,14 +69,8 @@ function App() {
                 />
               </a> */}
             {/* </div> */}
-            <a href="#">
-              dribble
-              <i className="fa-brands fa-dribble"></i>
-            </a>
-            <a href="#">
-              github
-              <i className="fa-brands fa-github"></i>
-            </a>
+            <a href="#">dribble</a>
+            <a href="#">github</a>
           </div>
           <div
             id={titleHover ? "nav-contact-section-dark" : "nav-contact-section"}
@@ -130,6 +134,12 @@ function App() {
             <div
               className="article-nav-section article-section"
               id={titleHover ? "article-nav-light" : null}
+              onMouseEnter={(e) => {
+                setWorkHover(true);
+              }}
+              onMouseLeave={(e) => {
+                setWorkHover(false);
+              }}
             >
               <button
                 className="article-nav-button"
@@ -138,7 +148,9 @@ function App() {
               >
                 <div className="article-nav-btn-container">
                   <div
-                    className="move-work-arrow"
+                    className={
+                      workHover ? "move-work-arrow-hover" : "move-work-arrow"
+                    }
                     id={titleHover ? null : "work-box"}
                   >
                     <h2>MY WORK</h2>
