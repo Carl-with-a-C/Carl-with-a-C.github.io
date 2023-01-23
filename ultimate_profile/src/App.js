@@ -5,9 +5,11 @@ import eyeIcon from "./images/eye-icon.svg";
 import rightArrow from "./images/curved-arrow-right.svg";
 import cross from "./images/cross.svg";
 import rightArrowDark from "./images/curved-arrow-right-dark.svg";
+// import hand from "./images/hand.svg";
+
 import crossDark from "./images/darkCross.svg";
-import ccLogoDark from "./images/CC-logo-black.svg";
-import ccLogoLight from "./images/CC-logo-wht.svg";
+import ccLogoDark from "./images/cc-dark.svg";
+import ccLogoLight from "./images/cc-light.svg";
 
 import { useState, useEffect } from "react";
 
@@ -19,11 +21,12 @@ function App() {
   const [titleHover, setTitleHover] = useState(false);
   const [socialHover, setSocialHover] = useState(false);
   const [workHover, setWorkHover] = useState(false);
+  const [contactHover, setContactHover] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   return (
     <div className="App">
-      <AnimCursor />
+      <AnimCursor contactHover={contactHover} />
       <body className={titleHover ? "body-light" : "body-dark"}>
         <nav id={titleHover ? "nav-light" : null}>
           <div
@@ -76,7 +79,17 @@ function App() {
             id={titleHover ? "nav-contact-section-dark" : "nav-contact-section"}
             className={titleHover ? "nav-section-light" : "nav-section"}
           >
-            <a href="#">CONTACT ME</a>
+            <a
+              href="#"
+              onMouseEnter={(e) => {
+                setContactHover(true);
+              }}
+              onMouseLeave={(e) => {
+                setContactHover(false);
+              }}
+            >
+              CONTACT ME
+            </a>
           </div>
         </nav>
         {/* <Work /> */}
@@ -96,6 +109,7 @@ function App() {
                   : "article-description-home"
               }
             >
+              {/* <img src={hand} alt="hand icon" /> */}
               <p id={titleHover ? "article-description-light" : null}>
                 Hi my name's Carl and I'm an aspiring front-end software
                 developer and designer.

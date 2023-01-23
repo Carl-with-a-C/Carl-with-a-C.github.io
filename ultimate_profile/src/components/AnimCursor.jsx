@@ -1,19 +1,17 @@
 import React from "react";
 import AnimatedCursor from "react-animated-cursor";
 
-export const AnimCursor = () => {
+export const AnimCursor = ({ contactHover }) => {
   return (
     <AnimatedCursor
-      trailingSpeed={100}
+      // trailingSpeed={contactHover ? 1 : 8}
       innerSize={12}
       outerSize={16}
       color="231, 231, 231"
       outerAlpha={0.9}
       innerScale={0.7}
-      outerScale={8}
-      outerStyle={{
-        mixBlendMode: "exclusion",
-      }}
+      outerScale={contactHover ? 2 : 6}
+      outerStyle={{ mixBlendMode: "exclusion" }}
       clickables={[
         "a",
         'input[type="text"]',
