@@ -1,189 +1,67 @@
 import "./App.css";
-import lineWobbleLight from "./images/wassle.gif";
-import lineWobbleDark from "./images/wobble.gif";
-import eyeIcon from "./images/eye-icon.svg";
-import rightArrow from "./images/curved-arrow-right.svg";
-import cross from "./images/cross.svg";
-import rightArrowDark from "./images/curved-arrow-right-dark.svg";
+//components
+import { Nav } from "./components/Nav";
+import { Home } from "./components/Home";
+import { Work } from "./components/Work";
+import { AnimCursor } from "./components/AnimCursor";
+
 // import hand from "./images/hand.svg";
 
-import crossDark from "./images/darkCross.svg";
-import ccLogoDark from "./images/cc-dark.svg";
-import ccLogoLight from "./images/cc-light.svg";
-
+//effects/libraries
+import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-
-import { Work } from "./Work";
-
-import { AnimCursor } from "./components/AnimCursor";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   const [titleHover, setTitleHover] = useState(false);
-  const [socialHover, setSocialHover] = useState(false);
-  const [workHover, setWorkHover] = useState(false);
   const [contactHover, setContactHover] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
+  const loadInitial = { y: 50, opacity: 0.01 };
+  const loadMotion = { y: 0, opacity: 1 };
+  const loadTransition = { speed: 0.01, delay: 0.4 };
+  const loadAnimation = {
+    loadInitial,
+    loadMotion,
+    loadTransition,
+  };
+
   return (
-    <div className="App">
+    <motion.div exit={{ opacity: 0 }} className="App">
       <AnimCursor contactHover={contactHover} />
       <body className={titleHover ? "body-light" : "body-dark"}>
-        <nav id={titleHover ? "nav-light" : null}>
-          <div
-            id="nav-logo-section"
-            className={titleHover ? "nav-section-light" : "nav-section"}
-          >
-            <a href="#">
-              <img
-                className="cc-logo"
-                src={titleHover ? ccLogoDark : ccLogoLight}
-                alt="CC-logo"
-              />
-            </a>
-          </div>
-          <div
-            id="nav-link-section"
-            className={titleHover ? "nav-section-light" : "nav-section"}
-          >
-            <a href="#">ABOUT</a>
-            <a href="#">WORK</a>
-          </div>
-          <div
-            id={titleHover ? "nav-social-section-dark" : "nav-social-section"}
-            className={titleHover ? "nav-section-light" : "nav-section"}
-            onMouseEnter={(e) => {
-              setSocialHover(true);
-            }}
-            onMouseLeave={(e) => {
-              setSocialHover(false);
-            }}
-          >
-            {/* <div className="nav-social-icons"> */}
-            <a
-              href="#"
-              className={socialHover ? "linked-icon-fade" : "linked-icon"}
-            >
-              linkedin
-            </a>
-            {/* <a href="#">
-                <img
-                  className={socialHover ? "linked-icon" : "linked-icon-fade"}
-                  src={linkedinIcon}
+        <AnimatePresence exitBeforeEnter>
+          <Nav
+            titleHover={titleHover}
+            setContactHover={setContactHover}
+            key="navBar"
+          />
+
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Home
+                  titleHover={titleHover}
+                  setTitleHover={setTitleHover}
+                  key="home"
                 />
-              </a> */}
-            {/* </div> */}
-            <a href="#">dribble</a>
-            <a href="#">github</a>
-          </div>
-          <div
-            id={titleHover ? "nav-contact-section-dark" : "nav-contact-section"}
-            className={titleHover ? "nav-section-light" : "nav-section"}
-          >
-            <a
-              href="#"
-              onMouseEnter={(e) => {
-                setContactHover(true);
-              }}
-              onMouseLeave={(e) => {
-                setContactHover(false);
-              }}
-            >
-              CONTACT ME
-            </a>
-          </div>
-        </nav>
-        {/* <Work /> */}
-        <main>
-          <article>
-            <div className="article-image-section article-section">
-              <img
-                src={titleHover ? lineWobbleLight : lineWobbleDark}
-                alt="mockup of a fashion app"
-              ></img>
-            </div>
-            <div
-              className="article-description-section article-section"
-              id={
-                titleHover
-                  ? "article-description-home-light"
-                  : "article-description-home"
               }
-            >
-              {/* <img src={hand} alt="hand icon" /> */}
-              <p id={titleHover ? "article-description-light" : null}>
-                Hi my name's Carl and I'm an aspiring front-end software
-                developer and designer.
-              </p>
-            </div>
-            <div
-              className="article-title-section article-section"
-              id={titleHover ? "article-title-light" : null}
-              onMouseEnter={(e) => {
-                setTitleHover(true);
-              }}
-              onMouseLeave={(e) => {
-                setTitleHover(false);
-              }}
-            >
-              <div className="article-title-container">
-                <h1 className={titleHover ? "title-hovered" : "title-neutral"}>
-                  SOFTWARE DEVELOPER
-                </h1>
-                <h1 className={titleHover ? "title-hovered" : "title-neutral"}>
-                  UI DESIGNER
-                </h1>
-              </div>
-              <a href="#">
-                <img
-                  className={
-                    titleHover
-                      ? "article-title-cross"
-                      : "article-title-cross-hover"
-                  }
-                  src={titleHover ? crossDark : cross}
-                  alt="cross"
+            />
+            <Route
+              path="/work"
+              element={
+                <Work
+                  titleHover={titleHover}
+                  setTitleHover={setTitleHover}
+                  key="work"
                 />
-              </a>
-            </div>
-            <div
-              className="article-nav-section article-section"
-              id={titleHover ? "article-nav-light" : null}
-              onMouseEnter={(e) => {
-                setWorkHover(true);
-              }}
-              onMouseLeave={(e) => {
-                setWorkHover(false);
-              }}
-            >
-              <button
-                className="article-nav-button"
-                type="button"
-                onClick={console.log("to work")}
-              >
-                <div className="article-nav-btn-container">
-                  <div
-                    className={
-                      workHover ? "move-work-arrow-hover" : "move-work-arrow"
-                    }
-                    id={titleHover ? null : "work-box"}
-                  >
-                    <h2>MY WORK</h2>
-                    <br />
-                    <div className="work-with-arrow">
-                      <h2>MY WORK</h2>
-                      <img
-                        src={titleHover ? rightArrowDark : rightArrow}
-                        alt="right arrow"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </button>
-            </div>
-          </article>
-        </main>
+              }
+            />
+          </Routes>
+        </AnimatePresence>
       </body>
-    </div>
+    </motion.div>
   );
 }
 

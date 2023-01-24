@@ -79,7 +79,7 @@ nav > .nav-section {
 }
 
 nav > .nav-section-light {
-  padding: 3em 2em;
+  padding: 2em 2em;
   display: flex;
   gap: 1rem;
   border-left: 1px solid var(--border-color-light);
@@ -93,7 +93,7 @@ nav > .nav-section-light {
 }
 
 .cc-logo {
-  width: 2em;
+  width: 1em;
 }
 
 #nav-link-section,
@@ -261,6 +261,11 @@ main > article > .article-title-section h2 {
 
 main > article > .article-nav-section {
   display: flex;
+  transition: ease-out 0.5s;
+}
+
+.work-button:hover {
+  background: rgb(24, 24, 24, 1);
   transition: ease-out 0.5s;
 }
 
