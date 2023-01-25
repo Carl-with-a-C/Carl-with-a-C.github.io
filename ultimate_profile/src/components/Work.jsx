@@ -38,7 +38,7 @@ export const Work = ({ titleHover, setTitleHover }) => {
   };
 
   return (
-    <main>
+    <motion.main exit={{ opacity: 0 }}>
       {activeIndex == 0 ? (
         <article
           data-index="0"
@@ -341,6 +341,6 @@ export const Work = ({ titleHover, setTitleHover }) => {
           </div>
         </article>
       ) : null}
-    </main>
+    </motion.main>
   );
 };

@@ -21,7 +21,7 @@ export const Home = ({ titleHover, setTitleHover }) => {
   const loadTransition = { speed: 0.01, delay: 0.4 };
 
   return (
-    <main>
+    <motion.main>
       <article>
         <div className="article-image-section article-section">
           <img
@@ -119,6 +119,6 @@ export const Home = ({ titleHover, setTitleHover }) => {
           </button>
         </div>
       </article>
-    </main>
+    </motion.main>
   );
 };
