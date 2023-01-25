@@ -4,6 +4,7 @@ import { Nav } from "./components/Nav";
 import { Home } from "./components/Home";
 import { Work } from "./components/Work";
 import { AnimCursor } from "./components/AnimCursor";
+import { InitialTransition } from "./components/InitialTransitions";
 
 // import hand from "./images/hand.svg";
 
@@ -27,10 +28,11 @@ function App() {
   };
 
   return (
-    <motion.div exit={{ opacity: 0 }} className="App">
+    <motion.div className="App">
       <AnimCursor contactHover={contactHover} />
       <body className={titleHover ? "body-light" : "body-dark"}>
         <AnimatePresence exitBeforeEnter>
+          <InitialTransition />
           <Nav
             titleHover={titleHover}
             setContactHover={setContactHover}

@@ -56,6 +56,21 @@ body {
   color: var(--background-color-light);
 }
 
+/* .initial-transition-box-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.initial-transition-box {
+  position: relative;
+  z-index: 50;
+  width: "100%";
+  background-color: var(--background-color);
+} */
+
 nav {
   display: flex;
   width: 100%;
