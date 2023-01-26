@@ -6,9 +6,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-export const Nav = ({ titleHover, setContactHover }) => {
-  const [socialHover, setSocialHover] = useState(false);
-
+export const Nav = ({ titleHover, setContactHover, setSocialHover }) => {
   return (
     <div>
       <nav id={titleHover ? "nav-light" : null}>
@@ -44,7 +42,6 @@ export const Nav = ({ titleHover, setContactHover }) => {
           <a
             href="https://www.linkedin.com/in/carl-clifton-51825364/"
             target="_blank"
-            className={socialHover ? "linked-icon-fade" : "linked-icon"}
           >
             linkedin
           </a>

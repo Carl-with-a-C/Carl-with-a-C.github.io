@@ -327,8 +327,8 @@ main > article > .article-nav-section {
   border-left: 1px solid var(--border-color);
 }
 
-#article-description-home p {
-  font-size: 30 px;
+.article-description-section p:hover {
+  transform: translateY(10px);
 }
 
 #article-description-home-light,
