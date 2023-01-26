@@ -51,11 +51,15 @@ export const Work = ({ titleHover, setTitleHover }) => {
             <motion.p
               initial={loadInitial}
               animate={loadMotion}
-              transition={{ opacity: { delay: 1, speed: 5 } }}
+              transition={{
+                opacity: { delay: 1, speed: 5 },
+                y: { duration: 0.01 },
+              }}
+              whileHover={{ y: -10 }}
               id={titleHover ? "article-description-light" : null}
             >
               A concept design for a project created by Carl. Colortone will
-              change the way users shop for clothing and makeup.
+              change the way users shop for clothing and makeup
             </motion.p>
           </div>
           <div
@@ -126,12 +130,16 @@ export const Work = ({ titleHover, setTitleHover }) => {
             <motion.p
               initial={loadInitial}
               animate={loadMotion}
-              transition={{ opacity: { delay: 1, speed: 5 } }}
+              transition={{
+                opacity: { delay: 1, speed: 5 },
+                y: { duration: 0.01 },
+              }}
+              whileHover={{ y: -10 }}
               id={titleHover ? "article-description-light" : null}
             >
               A concept design for a project during Carl's time at Northcoders
               bootcamp. Struction is a job management tool for construction
-              companies.
+              companies
             </motion.p>
           </div>
           <div
@@ -202,11 +210,15 @@ export const Work = ({ titleHover, setTitleHover }) => {
             <motion.p
               initial={loadInitial}
               animate={loadMotion}
-              transition={{ opacity: { delay: 1, speed: 5 } }}
+              transition={{
+                opacity: { delay: 1, speed: 5 },
+                y: { duration: 0.01 },
+              }}
+              whileHover={{ y: -10 }}
               id={titleHover ? "article-description-light" : null}
             >
               Football word game project currently being developed by Carl. The
-              user must guess the correct premier league football player.
+              user must guess the correct premier league football player
             </motion.p>
           </div>
           <div
@@ -277,12 +289,16 @@ export const Work = ({ titleHover, setTitleHover }) => {
             <motion.p
               initial={loadInitial}
               animate={loadMotion}
-              transition={{ opacity: { delay: 1, speed: 5 } }}
+              transition={{
+                opacity: { delay: 1, speed: 5 },
+                y: { duration: 0.01 },
+              }}
+              whileHover={{ y: -10 }}
               id={titleHover ? "article-description-light" : null}
             >
               A concept design for a project buy and sell app. Get Thrifty is
               designed with simple thrift asthetics reminiscent of old
-              classified adverts.
+              classified adverts
             </motion.p>
           </div>
           <div

@@ -15,6 +15,7 @@ import { Routes, Route } from "react-router-dom";
 
 function App() {
   const [titleHover, setTitleHover] = useState(false);
+  const [socialHover, setSocialHover] = useState(false);
   const [contactHover, setContactHover] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -29,13 +30,14 @@ function App() {
 
   return (
     <motion.div className="App">
-      <AnimCursor contactHover={contactHover} />
+      <AnimCursor contactHover={contactHover} socialHover={socialHover} />
       <body className={titleHover ? "body-light" : "body-dark"}>
-        <AnimatePresence exitBeforeEnter>
+        <AnimatePresence>
           <InitialTransition />
           <Nav
             titleHover={titleHover}
             setContactHover={setContactHover}
+            setSocialHover={setSocialHover}
             key="navBar"
           />
 

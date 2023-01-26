@@ -1,7 +1,7 @@
 import React from "react";
 import AnimatedCursor from "react-animated-cursor";
 
-export const AnimCursor = ({ contactHover }) => {
+export const AnimCursor = ({ contactHover, socialHover }) => {
   return (
     <AnimatedCursor
       // trailingSpeed={contactHover ? 1 : 8}
@@ -10,7 +10,7 @@ export const AnimCursor = ({ contactHover }) => {
       color="231, 231, 231"
       outerAlpha={0.9}
       innerScale={0.7}
-      outerScale={contactHover ? 2 : 6}
+      outerScale={contactHover || socialHover ? 2 : 6}
       outerStyle={{ mixBlendMode: "exclusion" }}
       clickables={[
         "a",

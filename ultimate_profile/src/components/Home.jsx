@@ -47,7 +47,7 @@ export const Home = ({ titleHover, setTitleHover }) => {
             id={titleHover ? "article-description-light" : null}
           >
             Hi my name's Carl and I'm an aspiring front-end software developer
-            and designer.
+            and designer
           </motion.p>
         </div>
         <div
