@@ -244,17 +244,19 @@ nav > .nav-section-light {
 @media screen and (max-width: 767px){
 #nav-menu {
   width: 30%;
+  margin-right:2rem;
 }}
 
 @media screen and (max-width: 991px){
 #nav-menu {
-    margin: none;
+    margin-right: 1.5rem;
     z-index: 99999;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     justify-content: flex-start;
+
     /* max-width: 16vw; */
 }}
 
