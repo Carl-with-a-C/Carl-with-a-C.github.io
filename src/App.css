@@ -59,20 +59,14 @@ body {
 
 nav {
   display: flex;
-  width: 100%;
+  width: 100vw;
   border-bottom: 1px solid var(--border-color);
   transition: ease-in-out 1s;
   align-items: center;
+  justify-content: space-between;
+  /* height: 14vh; */
 }
 
-nav:before, nav:after {
-  content: " ";
-  display: table;
-  grid-column-start: 1;
-  grid-row-start: 1;
-  grid-column-end: 2;
-  grid-row-end: 2;
-}
 
 #nav-light {
   border-bottom: 1px solid var(--border-color-light);
@@ -125,7 +119,6 @@ nav > .nav-section-light {
 #nav-social-section,
 #nav-social-section-dark {
   justify-content:space-around;
-  /* gap: 3rem; */
   line-height: 1px;
 }
 
@@ -160,9 +153,10 @@ nav > .nav-section-light {
 }
 
 @media screen and (max-width: 991px){
-#nav-link-section 
-    {display: none;}
-}
+#nav-link-section {
+    display: none;
+}}
+
 
 
 @media screen and (max-width: 991px){
@@ -244,23 +238,24 @@ nav > .nav-section-light {
     -ms-flex-align: center;
     align-items: center;
     cursor: pointer;
+
 }
 
 @media screen and (max-width: 767px){
 #nav-menu {
-    width: 32vw;
-    margin-left: auto;
+  width: 30%;
 }}
 
 @media screen and (max-width: 991px){
 #nav-menu {
+    margin: none;
     z-index: 99999;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    width: 24vw;
-    height: 100%;
+    justify-content: flex-start;
+    /* max-width: 16vw; */
 }}
 
 .nav-menu-text {
