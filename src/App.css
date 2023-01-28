@@ -47,6 +47,7 @@ body {
   transition: ease-in-out 1s;
 }
 
+
 .body-light {
   background-color: rgb(231, 231, 231);
 }
@@ -64,7 +65,6 @@ nav {
   transition: ease-in-out 1s;
   align-items: center;
   justify-content: space-between;
-  /* height: 14vh; */
 }
 
 
@@ -160,26 +160,30 @@ nav > .nav-section-light {
 
 
 @media screen and (max-width: 991px){
-#nav-contact-section {
-    display: none;
-    width: 30%;
+#nav-contact-section,
+#nav-contact-section-dark {
+  display: none;
+  width: 30%;
 }}
 
 @media screen and (max-width: 767px){
-#nav-contact-section  {
-    width: 25%;
+#nav-contact-section,
+#nav-contact-section-dark  {
+  width: 25%;
 }}
 
 @media screen and (max-width: 479px){
-#nav-contact-section  {
-    width: 40%;
+#nav-contact-section,
+#nav-contact-section-dark  {
+  width: 40%;
 }}
 
 
 
 @media screen and (max-width: 991px){
 
-#nav-social-section {
+  #nav-social-section,
+  #nav-social-section-dark {
     position: relative;
     width: 30%;
     margin-right: 0px;
@@ -195,7 +199,8 @@ nav > .nav-section-light {
 }}
 
 @media screen and (max-width: 767px){
-  #nav-social-section 
+  #nav-social-section,
+  #nav-social-section-dark 
 {
     display: none;
     width: 25%;
@@ -207,7 +212,8 @@ nav > .nav-section-light {
 }}
 
 @media screen and (max-width: 479px){
-  #nav-social-section 
+  #nav-social-section,
+  #nav-social-section-dark
  {
     overflow: visible;
     width: 0%;
@@ -219,6 +225,7 @@ nav > .nav-section-light {
 {html {
     font-size: 80%;
 }}
+
 
 #nav-menu {
     position: relative;
@@ -256,8 +263,6 @@ nav > .nav-section-light {
     display: -ms-flexbox;
     display: flex;
     justify-content: flex-start;
-
-    /* max-width: 16vw; */
 }}
 
 .nav-menu-text {
@@ -309,6 +314,19 @@ main > article {
   top: 0px;
 }
 
+@media screen and (max-width: 991px) {
+  main > article {
+    display: grid;
+    height: 100%;
+    width: 100vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5fr 2fr 2fr 1fr;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+}
+
 main > article h1 {
   font-size: 60px;
   line-height: 0.3em;
@@ -336,11 +354,25 @@ main > article > .article-description-section {
   padding: 4em;
 }
 
+@media screen and (max-width: 991px) {
+  main > article > .article-description-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1em;
+  }}
+
 main > article > .article-description-section p {
   font-size: 20px;
   margin: 0;
   color: var(--text-color-fade);
 }
+
+@media screen and (max-width: 991px) {
+  main > article > .article-description-section p {
+    font-size: 95%;
+  }} 
 
 #article-description-light {
   color: var(--background-color);
@@ -358,6 +390,24 @@ main > article > .article-title-section {
   justify-content: space-around;
   align-items: center;
 }
+
+@media screen and (max-width: 1200px) {
+  main > article > .article-title-section {
+    padding: 2em 4em 0 4em;
+  }}
+
+@media screen and (max-width: 767px) {
+  main > article > .article-title-section {
+    padding: 2em 4em 0 4em;
+  }}
+  
+  @media screen and (max-width: 1200px) {
+    main > article > .article-title-section h1 {
+      line-height: 0.7em;
+      transform: translateY(-.8em);
+    }
+  
+  }
 
 main > article > .article-title-section h2 {
   font-size: 50px;
