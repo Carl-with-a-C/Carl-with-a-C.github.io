@@ -37,8 +37,6 @@ export const Home = ({ titleHover, setTitleHover }) => {
               : "article-description-home"
           }
         >
-          {/* <img src={hand} alt="hand icon" /> */}
-
           <motion.p
             initial={loadInitial}
             animate={loadMotion}
@@ -66,10 +64,10 @@ export const Home = ({ titleHover, setTitleHover }) => {
             transition={loadTransition}
             className="article-title-container"
           >
-            <h1 className={titleHover ? "title-hovered" : "title-neutral"}>
+            <h1 id={titleHover ? "title-hovered" : "title-neutral"}>
               SOFTWARE DEVELOPER
             </h1>
-            <h1 className={titleHover ? "title-hovered" : "title-neutral"}>
+            <h1 id={titleHover ? "title-hovered" : "title-neutral"}>
               UI DESIGNER
             </h1>
           </motion.div>

@@ -19,10 +19,18 @@ export const Work = ({ titleHover, setTitleHover }) => {
   const loadInitial = { y: 50, opacity: 0.01 };
   const loadMotion = { y: 0, opacity: 1 };
   const loadTransition = { speed: 0.01, delay: 0.4 };
+
   const loadAnimation = {
     loadInitial,
     loadMotion,
     loadTransition,
+  };
+
+  const arrowMove = {
+    transition: {
+      type: "spring",
+      stiffness: 400,
+    },
   };
 
   const handleLeftClick = () => {
@@ -78,10 +86,10 @@ export const Work = ({ titleHover, setTitleHover }) => {
               transition={loadTransition}
               className="article-title-container"
             >
-              <h1 className={titleHover ? "title-hovered" : "title-neutral"}>
+              <h1 id={titleHover ? "title-hovered" : "title-neutral"}>
                 COLORTONE
               </h1>
-              <h1 className={titleHover ? "title-hovered" : "title-neutral"}>
+              <h1 id={titleHover ? "title-hovered" : "title-neutral"}>
                 SHOW CONCEPT ART
               </h1>
             </motion.div>
@@ -100,7 +108,10 @@ export const Work = ({ titleHover, setTitleHover }) => {
               type="button"
               onClick={(e) => handleLeftClick(e)}
             >
-              <img
+              <motion.img
+                whileHover={{ x: -10 }}
+                //fix transition
+                transition={{ delay: 0, duration: 0.2 }}
                 src={titleHover ? arrowLeftDark : arrowLeft}
                 alt="arrow right"
               />

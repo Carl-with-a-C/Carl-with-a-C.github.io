@@ -10,18 +10,19 @@ export const Nav = ({ titleHover, setContactHover, setSocialHover }) => {
   return (
     <div>
       <nav id={titleHover ? "nav-light" : null}>
-        <div
+        <motion.div
           id="nav-logo-section"
           className={titleHover ? "nav-section-light" : "nav-section"}
         >
           <Link to="/">
-            <img
+            <motion.img
+              whileHover={{ scale: 1.4 }}
               className="cc-logo"
               src={titleHover ? ccLogoDark : ccLogoLight}
               alt="CC-logo"
             />
           </Link>
-        </div>
+        </motion.div>
         <div
           id="nav-link-section"
           className={titleHover ? "nav-section-light" : "nav-section"}
@@ -42,16 +43,23 @@ export const Nav = ({ titleHover, setContactHover, setSocialHover }) => {
           <a
             href="https://www.linkedin.com/in/carl-clifton-51825364/"
             target="_blank"
-          rel="noreferrer"
+            rel="noreferrer"
           >
             linkedin
           </a>
 
-          <a href="https://dribbble.com/ClifCarlton" target="_blank" rel="noreferrer">
-            
+          <a
+            href="https://dribbble.com/ClifCarlton"
+            target="_blank"
+            rel="noreferrer"
+          >
             dribble
           </a>
-          <a href="https://github.com/Carl-with-a-C" target="_blank" rel="noreferrer">
+          <a
+            href="https://github.com/Carl-with-a-C"
+            target="_blank"
+            rel="noreferrer"
+          >
             github
           </a>
         </div>
@@ -60,7 +68,7 @@ export const Nav = ({ titleHover, setContactHover, setSocialHover }) => {
           className={titleHover ? "nav-section-light" : "nav-section"}
         >
           <a
-            href="#"
+            href="mailto:carlbclifton@gmail.com"
             onMouseEnter={(e) => {
               setContactHover(true);
             }}
@@ -71,12 +79,15 @@ export const Nav = ({ titleHover, setContactHover, setSocialHover }) => {
             CONTACT ME
           </a>
         </div>
-        <div           className={titleHover ? "nav-section-light" : "nav-section"} id="nav-menu">
-        <div className="nav-menu-text">MENU</div>
-        <div className="nav-menu--burger">
-        <div class="nav-menu-burger--top-line" ></div>
-        <div class="nav-menu-burger--bottom-line"></div>
-        </div>
+        <div
+          className={titleHover ? "nav-section-light" : "nav-section"}
+          id="nav-menu"
+        >
+          <div className="nav-menu-text">MENU</div>
+          <div className="nav-menu--burger">
+            <div className="nav-menu-burger--top-line"></div>
+            <div className="nav-menu-burger--bottom-line"></div>
+          </div>
         </div>
       </nav>
     </div>
